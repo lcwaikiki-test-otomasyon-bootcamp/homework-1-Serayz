@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.Console;
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
@@ -38,15 +39,23 @@ public class Main {
         elementSifre.sendKeys("951951");
 
         try {
-            Thread.sleep(400);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         WebElement elementGirisYap = driver.findElement(By.xpath("//*[@id=\"login\"]/div/div/div/div/form/button"));
         elementGirisYap.click();
 
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         WebElement elementError = driver.findElement(By.xpath("//*[@id=\"login\"]/div/div/div/div/div/p"));
-        elementError.isDisplayed();
+        //elementError.isDisplayed();
+        System.out.println(elementError.getText());
+
 
     }
     }
